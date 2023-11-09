@@ -15,11 +15,14 @@ public class App {
         List<LargeAnimal> largeAnimals = Arrays.asList(
                 new Lion(LocalDate.of(2010, 4, 28)),
                 new Lion(LocalDate.of(2012, 5, 11)),
-                new Zebra(LocalDate.of(2008, 12, 1))
+                new Zebra(LocalDate.of(2008, 12, 1)),
+                new GuineaFowl(LocalDate.of(2021, 5, 23))
         );
-        List<SmallAnimal> smallAnimals = Collections.singletonList(
-                new Rabbit(LocalDate.of(2014, 1, 1))
+        List<SmallAnimal> smallAnimals = Arrays.asList(
+                new Rabbit(LocalDate.of(2014, 1, 1)),
+                new Nemo(LocalDate.of(2021, 5, 23))
         );
+
         List<Animal> animals = new ArrayList<>();
         animals.addAll(largeAnimals);
         animals.addAll(smallAnimals);
