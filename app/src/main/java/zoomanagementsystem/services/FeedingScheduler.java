@@ -5,20 +5,15 @@ import zoomanagementsystem.models.Keeper;
 
 import java.util.List;
 
-public class FeedingScheduler {
-    private static FeedingScheduler instance;
+public class FeedingScheduler  implements Scheduler {
 
-    private FeedingScheduler() {
+    public FeedingScheduler() {
+        super();
     }
 
-    public static FeedingScheduler getInstance() {
-        if (instance == null) {
-            instance = new FeedingScheduler();
-        }
-        return instance;
-    }
-
-    public void assignFeedingJobs(List<Keeper<? extends Animal>> keepers) {
+    @Override
+    public void assignJobs(List<Keeper<? extends Animal>> keepers) {
         keepers.forEach(keeper -> keeper.getResponsibleAnimals().forEach(keeper::feed));
     }
+
 }
